@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="ps2max32" fetch="https://github.com/ps2max32/" />
+  <remote name="rickgaiser" fetch="https://github.com/rickgaiser/" />
+  <remote name="github" fetch="https://github.com/" />
+  <default remote="ps2max32" revision="master" sync-j="4" />
+
+  <!-- this repo: root scripts and docs, linked into the workspace root -->
+  <project name="ps2max" path=".manifest-root" remote="ps2max32" revision="master">
+    <linkfile src="CLAUDE.md" dest="CLAUDE.md" />
+    <linkfile src="TODO.md" dest="TODO.md" />
+    <linkfile src="build-all.sh" dest="build-all.sh" />
+    <linkfile src="build-apps.sh" dest="build-apps.sh" />
+    <linkfile src="build-libs.sh" dest="build-libs.sh" />
+    <linkfile src="build-llvm.sh" dest="build-llvm.sh" />
+    <linkfile src="build-tools.sh" dest="build-tools.sh" />
+    <linkfile src="envsetup.sh" dest="envsetup.sh" />
+    <linkfile src="toolchain/llvm-configure.sh" dest="toolchain/llvm/configure.sh" />
+  </project>
+
+  <!-- LLVM with R5900/VU support: feature branch; see toolchain/llvm/CLAUDE.md for the extra worktrees -->
+  <project name="llvm-project" path="toolchain/llvm/llvm-project" remote="rickgaiser" revision="r5900-feature" />
+
+  <!-- libs -->
+  <project name="libgl" path="libs/libgl" />
+  <project name="maxsdk" path="libs/maxsdk" />
+  <project name="lwip-tcpip/lwip" path="libs/lwip" remote="github" revision="refs/tags/STABLE-2_2_1_RELEASE" />
+  <project name="Mbed-TLS/mbedtls" path="libs/mbedtls" remote="github" revision="refs/tags/mbedtls-3.6.8" />
+  <project name="picolibc/picolibc" path="libs/picolibc" remote="github" revision="refs/tags/1.8.9" />
+  <project name="madler/zlib" path="libs/zlib" remote="github" revision="5a82f71ed1dfc0bec044d9702463dbdf84ea3b71" upstream="master" />
+
+  <!-- apps -->
+  <project name="daedalus" path="apps/daedalus" revision="ps2" />
+  <project name="descent3" path="apps/descent3" revision="ps2" />
+  <project name="doom" path="apps/doom" revision="ps2" />
+  <project name="duke3d" path="apps/duke3d" revision="ps2" />
+  <project name="gamedata" path="apps/gamedata" revision="master" />
+  <project name="halflife" path="apps/halflife" revision="ps2" />
+  <project name="hexen2" path="apps/hexen2" revision="ps2" />
+  <project name="mxboot" path="apps/mxboot" revision="master" />
+  <project name="mxlink" path="apps/mxlink" revision="master" />
+  <project name="mxos" path="apps/mxos" revision="master" />
+  <project name="mxshell" path="apps/mxshell" revision="master" />
+  <project name="njemu" path="apps/njemu" revision="ps2" />
+  <project name="quake1" path="apps/quake1" revision="ps2" />
+  <project name="quake2" path="apps/quake2" revision="ps2" />
+  <project name="quake3" path="apps/quake3" revision="ps2-ren" />
+  <project name="quakespasm" path="apps/quakespasm" revision="ps2" />
+  <project name="store" path="apps/mxstore" />
+  <project name="test_llvm_01" path="apps/llvm_bench" remote="rickgaiser" />
+  <project name="ptitSeb/Serious-Engine" path="apps/serioussam" remote="github" />
+
+  <!-- tools -->
+  <project name="ps2homebrew/kelftool" path="tools/kelftool" remote="github" />
+  <project name="ps2client" path="tools/ps2client" remote="rickgaiser" revision="fast-path" />
+
+  <project name="docker" path="docker" revision="main" />
+</manifest>
