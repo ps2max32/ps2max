@@ -8,11 +8,11 @@ for Google's [`repo`](https://gerrit.googlesource.com/git-repo) tool.
     repo sync
 
 `repo sync` checks out every project listed in `default.xml` and links the build scripts and docs
-(`build-all.sh`, `envsetup.sh`, `CLAUDE.md`, ...) from this repo into the workspace root. Then are created by hand.
+(`build-all.sh`, `envsetup.sh`, `CLAUDE.md`, ...) from this repo into the workspace root. Then see
 `CLAUDE.md` for building: `./build-all.sh`.
 
 Notes:
-- The LLVM extra worktrees (`toolchain/llvm/wt/*`) are not managed by `repo`; are created by hand.
+- The LLVM extra worktrees (`toolchain/llvm/wt/*`) are not managed by `repo`: create them by hand.
 - Some projects (apps/model, apps/openlara, apps/pcsx, apps/procgen, libs/libmxm) have no remote yet and are not listed.
 - Projects follow a branch (usually `ps2` for ports, `master` for the rest), not a pinned commit.
   `repo manifest -r -o pinned.xml` records the exact commits of a workspace.

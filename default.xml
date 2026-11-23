@@ -18,7 +18,7 @@
     <linkfile src="toolchain/llvm-configure.sh" dest="toolchain/llvm/configure.sh" />
   </project>
 
-  <!-- LLVM with R5900/VU support: feature branch; see toolchain/llvm/CLAUDE.md for the extra worktrees -->
+  <!-- LLVM with R5900/VU support: feature branch -->
   <project name="llvm-project" path="toolchain/llvm/llvm-project" remote="rickgaiser" revision="r5900-feature" />
 
   <!-- libs -->
