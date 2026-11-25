@@ -41,6 +41,7 @@
   <project name="mxlink" path="apps/mxlink" revision="master" />
   <project name="mxos" path="apps/mxos" revision="master" />
   <project name="mxshell" path="apps/mxshell" revision="master" />
+  <project name="neutrino" path="apps/neutrino" revision="master" />
   <project name="njemu" path="apps/njemu" revision="ps2" />
   <project name="quake1" path="apps/quake1" revision="ps2" />
   <project name="quake2" path="apps/quake2" revision="ps2" />
