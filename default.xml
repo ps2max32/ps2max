@@ -19,7 +19,7 @@
   </project>
 
   <!-- LLVM with R5900/VU support: feature branch -->
-  <project name="llvm-project" path="toolchain/llvm/llvm-project" remote="rickgaiser" revision="r5900-feature" />
+  <project name="llvm" path="toolchain/llvm/llvm-project" revision="r5900-feature" />
 
   <!-- libs -->
   <project name="libgl" path="libs/libgl" />
