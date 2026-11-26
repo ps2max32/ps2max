@@ -80,9 +80,11 @@ Any change to how programs run (loader, kernel services, memory map, paths, pad 
     (the kernel resets it then). `exec` log lines count the returns. While a program runs, the host link cannot use
     host: itself: ping/dumpmem/dumpreg are refused then (as ps2link).
   - `ps2client status` says what it is doing: `state=ready|menu|running|starting returns=N status=<last exit>
-    model=<SCPH-...> rom=<ROMVER> program=<path>`. mxlink's IOP module answers it alone, so **unlike ping it is safe during a run** and may
+    model=<SCPH-...> rom=<ROMVER> link=mxos|standalone [kernel=N] [mxlink=V] program=<path>`. mxlink's IOP module answers it alone, so **unlike ping it is safe during a run** and may
     be asked in a loop. The runner waits on it (a hello.elf run: 0.7 s); REBOOT_WAIT is only its maximum,
-    15 s, the fixed wait for a plain ps2link.
+    15 s, the fixed wait for a plain ps2link. `link=` says which mxlink runs: mx OS (this kernel) or the
+    standalone one (`apps/mxlink/standalone`, a loader on the BIOS for standalone and ps2sdk ELFs); no
+    `link=` is an older ps2link.irx, mx OS. Switching: the skill's `ps2mode.sh` ("Two mxlinks").
   - With `mc0:/MXOS/SERVICES.CFG` (since kernel version 20: `mc0:/MXOS/MXLINK.ELF`, apps/mxlink/ee) it starts
     that service first: mxlink's app, which takes ps2client's commands but the reset (it ends the shell for them);
     while the app is not there (after a program that took all memory, until it is back) the kernel serves the
