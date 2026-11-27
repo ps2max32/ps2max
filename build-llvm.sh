@@ -5,4 +5,4 @@
 set -e
 cd "$(dirname "$0")"
 toolchain/llvm/configure.sh feature
-ninja -C build/toolchain/llvm/feature distribution llc llvm-mca
+ninja -C build/toolchain/llvm/feature distribution llc llvm-mca llvm-mc
