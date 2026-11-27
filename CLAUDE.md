@@ -12,6 +12,10 @@ LLVM based PS2 toolchain and SDK (maxsdk), and the projects built with it.
 - `build/` — all build output (`build/toolchain/llvm/<role>`, `build/libs/...`, `build/apps/...`,
   `build/apps/mxos`).
 
+# branches and repo
+- The workspace is a `repo` checkout of this manifest (`default.xml`); branch rules and how to commit
+  (`repo start` first, the pre-commit hook): `.manifest-root/README.md`, "Branches".
+
 # building
 - `./build-all.sh` builds everything: `build-llvm.sh` (feature LLVM), `build-tools.sh` (ps2client, mxlink),
   `build-libs.sh` (picolibc, maxsdk, libmxm), `build-apps.sh` (the maxsdk apps).

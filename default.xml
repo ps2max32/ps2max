@@ -45,10 +45,10 @@
   <project name="njemu" path="apps/njemu" revision="ps2" />
   <project name="quake1" path="apps/quake1" revision="ps2" />
   <project name="quake2" path="apps/quake2" revision="ps2" />
-  <project name="quake3" path="apps/quake3" revision="ps2-ren" />
+  <project name="quake3" path="apps/quake3" revision="ps2" />
   <project name="quakespasm" path="apps/quakespasm" revision="ps2" />
   <project name="store" path="apps/mxstore" />
-  <project name="test_llvm_01" path="apps/llvm_bench" remote="rickgaiser" />
+  <project name="llvm_bench" path="apps/llvm_bench" />
   <project name="ptitSeb/Serious-Engine" path="apps/serioussam" remote="github" />
 
   <!-- tools -->

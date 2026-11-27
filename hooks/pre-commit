@@ -1,0 +1,16 @@
+#!/bin/sh
+# ps2max pre-commit hook (installed by install-hooks.sh): no commits on a detached HEAD.
+# `repo sync` leaves projects detached; a commit there is on no branch and is easily lost.
+git symbolic-ref -q HEAD >/dev/null && exit 0
+# a rebase, cherry-pick, revert or bisect detaches HEAD on purpose
+for d in rebase-merge rebase-apply CHERRY_PICK_HEAD REVERT_HEAD BISECT_LOG; do
+  [ -e "$(git rev-parse --git-path "$d")" ] && exit 0
+done
+cat >&2 <<'EOF'
+pre-commit: HEAD is detached (as `repo sync` leaves it); this commit would be on no branch.
+Start the branch the manifest names first, then commit:
+    repo start <branch> .        (e.g. master, or ps2 for a port)
+or, for a feature branch:  git switch -c <name>
+(git commit --no-verify skips this check.)
+EOF
+exit 1
